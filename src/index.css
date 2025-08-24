@@ -2,41 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Elegant Clothing Showcase Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Warm neutral palette */
+    --background: 30 8% 98%;
+    --foreground: 20 14% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 20 14% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 20 14% 12%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Sophisticated charcoal primary */
+    --primary: 20 14% 12%;
+    --primary-foreground: 30 8% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Warm cream secondary */
+    --secondary: 30 15% 95%;
+    --secondary-foreground: 20 14% 12%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Soft neutral muted */
+    --muted: 25 10% 92%;
+    --muted-foreground: 20 8% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Sage green accent */
+    --accent: 140 20% 75%;
+    --accent-foreground: 20 14% 12%;
+
+    /* Warm terracotta for highlights */
+    --highlight: 15 50% 70%;
+    --highlight-foreground: 30 8% 98%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 30 8% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 25 10% 88%;
+    --input: 25 10% 88%;
+    --ring: 140 20% 75%;
 
-    --radius: 0.5rem;
+    --radius: 0.375rem;
+
+    /* Typography scale */
+    --font-display: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+
+    /* Spacing scale */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+
+    /* Shadows */
+    --shadow-subtle: 0 1px 3px 0 hsl(20 14% 12% / 0.1);
+    --shadow-medium: 0 4px 12px 0 hsl(20 14% 12% / 0.1);
+    --shadow-large: 0 8px 24px 0 hsl(20 14% 12% / 0.15);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +85,37 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode with sophisticated warm grays */
+    --background: 20 14% 8%;
+    --foreground: 30 8% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 20 14% 10%;
+    --card-foreground: 30 8% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --primary: 30 8% 92%;
+    --primary-foreground: 20 14% 8%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 20 10% 15%;
+    --secondary-foreground: 30 8% 92%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --muted: 20 10% 15%;
+    --muted-foreground: 25 8% 65%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 140 20% 65%;
+    --highlight: 15 45% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --border: 20 10% 18%;
+    --input: 20 10% 18%;
+    --ring: 140 20% 65%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 20 14% 8%;
+    --sidebar-foreground: 30 8% 92%;
+    --sidebar-primary: 140 20% 65%;
+    --sidebar-primary-foreground: 20 14% 8%;
+    --sidebar-accent: 20 10% 15%;
+    --sidebar-accent-foreground: 30 8% 92%;
+    --sidebar-border: 20 10% 18%;
+    --sidebar-ring: 140 20% 65%;
   }
 }
 
@@ -100,6 +125,50 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 500;
+  }
+}
+
+@layer components {
+  /* Product card hover effects */
+  .product-card {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .product-card img {
+    @apply transition-transform duration-500 group-hover:scale-105;
+  }
+
+  /* Hero section gradient overlay */
+  .hero-overlay {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.7), hsl(var(--accent) / 0.3));
+  }
+
+  /* Filter sidebar styling */
+  .filter-section {
+    @apply border-b border-border pb-6 mb-6 last:border-b-0 last:pb-0 last:mb-0;
+  }
+
+  /* Button variants */
+  .btn-hero {
+    @apply bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground px-8 py-3 rounded-md font-medium transition-colors duration-200;
+  }
+
+  .btn-outline {
+    @apply border border-border text-foreground hover:bg-secondary px-6 py-2 rounded-md font-medium transition-colors duration-200;
+  }
+
+  /* Typography utilities */
+  .text-display {
+    font-family: var(--font-display);
+  }
+
+  .text-body {
+    font-family: var(--font-sans);
   }
 }

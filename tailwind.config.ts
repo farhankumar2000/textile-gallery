@@ -44,6 +44,10 @@ export default {
 					DEFAULT: 'hsl(var(--accent))',
 					foreground: 'hsl(var(--accent-foreground))'
 				},
+				highlight: {
+					DEFAULT: 'hsl(var(--highlight))',
+					foreground: 'hsl(var(--highlight-foreground))'
+				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
 					foreground: 'hsl(var(--popover-foreground))'
@@ -62,6 +66,23 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			fontFamily: {
+				display: ['Playfair Display', 'serif'],
+				sans: ['Inter', 'sans-serif'],
+			},
+			spacing: {
+				'xs': 'var(--spacing-xs)',
+				'sm': 'var(--spacing-sm)', 
+				'md': 'var(--spacing-md)',
+				'lg': 'var(--spacing-lg)',
+				'xl': 'var(--spacing-xl)',
+				'2xl': 'var(--spacing-2xl)',
+			},
+			boxShadow: {
+				'subtle': 'var(--shadow-subtle)',
+				'medium': 'var(--shadow-medium)',
+				'large': 'var(--shadow-large)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

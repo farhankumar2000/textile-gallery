@@ -1,12 +1,232 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import ProductCard from "@/components/ProductCard";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+
+// Import product images for featured products
+import product1 from "@/assets/product-1.jpg";
+import product2 from "@/assets/product-2.jpg";
+import product3 from "@/assets/product-3.jpg";
 
 const Index = () => {
+  // Featured products
+  const featuredProducts = [
+    {
+      id: "1",
+      name: "Essential Cotton Tee",
+      price: 45,
+      originalPrice: 55,
+      image: product1,
+      category: "women",
+      isNew: true
+    },
+    {
+      id: "2", 
+      name: "Wool Knit Sweater",
+      price: 120,
+      image: product2,
+      category: "men",
+      isNew: false
+    },
+    {
+      id: "3",
+      name: "Linen Summer Dress",
+      price: 85,
+      image: product3,
+      category: "women", 
+      isNew: true
+    }
+  ];
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Header />
+      
+      <main>
+        {/* Hero Section */}
+        <Hero />
+
+        {/* Shop Introduction */}
+        <section className="py-16 px-4">
+          <div className="container mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl md:text-4xl font-display font-semibold mb-6">
+              Crafted for the Modern Individual
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              At Atelier, we believe in the power of thoughtful design and quality craftsmanship. 
+              Our curated collection features timeless pieces that seamlessly blend comfort, 
+              style, and sustainability. Each garment is carefully selected to ensure it meets 
+              our high standards for both aesthetic appeal and ethical production.
+            </p>
+            <div className="grid md:grid-cols-3 gap-8 text-left">
+              <div className="space-y-2">
+                <h3 className="font-semibold text-accent">Quality Materials</h3>
+                <p className="text-sm text-muted-foreground">
+                  Premium fabrics sourced from trusted suppliers worldwide
+                </p>
+              </div>
+              <div className="space-y-2">
+                <h3 className="font-semibold text-accent">Timeless Design</h3>
+                <p className="text-sm text-muted-foreground">
+                  Classic silhouettes that transcend seasonal trends
+                </p>
+              </div>
+              <div className="space-y-2">
+                <h3 className="font-semibold text-accent">Ethical Production</h3>
+                <p className="text-sm text-muted-foreground">
+                  Responsibly made with respect for people and planet
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Products */}
+        <section className="py-16 px-4 bg-muted/30">
+          <div className="container mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-display font-semibold mb-4">
+                Featured Collection
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Discover our most loved pieces, carefully selected for their exceptional 
+                quality and timeless appeal.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {featuredProducts.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+
+            <div className="text-center">
+              <Button asChild className="btn-hero">
+                <Link to="/collections">View All Products</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Categories Section */}
+        <section className="py-16 px-4">
+          <div className="container mx-auto">
+            <h2 className="text-3xl md:text-4xl font-display font-semibold text-center mb-12">
+              Shop by Category
+            </h2>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              <Link 
+                to="/collections?category=women" 
+                className="group relative h-64 rounded-lg overflow-hidden bg-muted"
+              >
+                <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/30 transition-colors duration-300" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <h3 className="text-2xl font-display font-semibold text-white">
+                    Women's
+                  </h3>
+                </div>
+              </Link>
+              
+              <Link 
+                to="/collections?category=men" 
+                className="group relative h-64 rounded-lg overflow-hidden bg-muted"
+              >
+                <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/30 transition-colors duration-300" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <h3 className="text-2xl font-display font-semibold text-white">
+                    Men's
+                  </h3>
+                </div>
+              </Link>
+              
+              <Link 
+                to="/collections?category=kids" 
+                className="group relative h-64 rounded-lg overflow-hidden bg-muted"
+              >
+                <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/30 transition-colors duration-300" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <h3 className="text-2xl font-display font-semibold text-white">
+                    Kids
+                  </h3>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Newsletter Section */}
+        <section className="py-16 px-4 bg-primary text-primary-foreground">
+          <div className="container mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-display font-semibold mb-4">
+              Stay in Touch
+            </h2>
+            <p className="text-primary-foreground/80 mb-8">
+              Be the first to know about new arrivals, exclusive offers, and 
+              styling tips from our team.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 rounded-md text-foreground"
+              />
+              <Button className="bg-accent text-accent-foreground hover:bg-accent/90">
+                Subscribe
+              </Button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="py-12 px-4 bg-muted/50">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="font-display font-semibold text-lg mb-4">Atelier</h3>
+              <p className="text-sm text-muted-foreground">
+                Crafting timeless pieces for the modern individual since 2024.
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="font-medium mb-4">Shop</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><Link to="/collections" className="hover:text-foreground transition-colors">All Products</Link></li>
+                <li><Link to="/collections?category=women" className="hover:text-foreground transition-colors">Women's</Link></li>
+                <li><Link to="/collections?category=men" className="hover:text-foreground transition-colors">Men's</Link></li>
+                <li><Link to="/collections?category=kids" className="hover:text-foreground transition-colors">Kids</Link></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-medium mb-4">Support</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="#" className="hover:text-foreground transition-colors">Size Guide</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Shipping</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Returns</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Contact</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-medium mb-4">Connect</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="#" className="hover:text-foreground transition-colors">Instagram</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Facebook</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Twitter</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Pinterest</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
+            <p>&copy; 2024 Atelier. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
