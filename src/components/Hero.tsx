@@ -28,14 +28,14 @@ const Hero = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center hero-buttons">
-          <Button asChild className="btn-hero text-lg px-8 py-3">
-            <Link to="/collections">Browse Collection</Link>
+          <Button asChild className="btn-hero text-lg  py-3">
+            <Link to="/collections" className="hover:text-black" >Browse Collection</Link>
           </Button>
           
           <Button 
             variant="outline" 
             asChild 
-            className="btn-outline text-white border-white text-lg"
+            className="btn-outline text-black border-white text-lg"
           >
             <Link to="/collections?category=new">New Arrivals</Link>
           </Button>
@@ -43,7 +43,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/60">
+      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-white/60">
         <div className="flex flex-col items-center">
           <span className="text-sm mb-2">Scroll to explore</span>
           <div className="w-px h-12 bg-white/30 animate-pulse" />

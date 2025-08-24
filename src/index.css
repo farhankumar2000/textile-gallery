@@ -1,9 +1,11 @@
+/* Elegant Clothing Showcase Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Elegant Clothing Showcase Design System */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 
 @layer base {
   :root {
@@ -145,16 +147,17 @@
 
 @layer components {
   /* Enhanced product cards */
-  .product-card {
-    @apply transition-all duration-300 hover:shadow-elegant hover:-translate-y-2;
-    background: var(--gradient-card);
-    border: 1px solid hsl(var(--border) / 0.5);
-  }
+.product-card {
+  @apply transition-all duration-300 hover:-translate-y-2;
+  background: var(--gradient-card);
+  border: 1px solid hsl(var(--border) / 0.5);
+  box-shadow: var(--shadow-subtle);
+}
 
-  .product-card:hover {
-    box-shadow: var(--shadow-elegant);
-    transform: translateY(-8px) scale(1.02);
-  }
+.product-card:hover {
+  box-shadow: var(--shadow-elegant);
+  transform: translateY(-8px) scale(1.02);
+}
 
   .product-card img {
     @apply transition-transform duration-500 group-hover:scale-110;

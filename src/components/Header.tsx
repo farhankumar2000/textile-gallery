@@ -23,7 +23,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <h1 className="text-2xl font-display font-semibold text-primary">
-              Atelier
+              Aurora
             </h1>
           </Link>
 
