@@ -10,6 +10,7 @@ import product2 from "@/assets/product-2.jpg";
 import product3 from "@/assets/product-3.jpg";
 
 const Index = () => {
+  console.log("Index component loading - Atelier clothing showcase");
   // Featured products
   const featuredProducts = [
     {
