@@ -51,30 +51,30 @@ const Index = () => {
         {/* Shop Introduction */}
         <section className="py-16 px-4">
           <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl md:text-4xl font-display font-semibold mb-6">
+            <h2 className="text-3xl md:text-4xl font-display font-semibold mb-6 animate-slide-up">
               Crafted for the Modern Individual
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-12 animate-slide-up">
               At Atelier, we believe in the power of thoughtful design and quality craftsmanship. 
               Our curated collection features timeless pieces that seamlessly blend comfort, 
               style, and sustainability. Each garment is carefully selected to ensure it meets 
               our high standards for both aesthetic appeal and ethical production.
             </p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
-              <div className="space-y-2">
-                <h3 className="font-semibold text-accent">Quality Materials</h3>
+              <div className="feature-card animate-slide-up">
+                <h3 className="font-semibold text-accent mb-3">Quality Materials</h3>
                 <p className="text-sm text-muted-foreground">
                   Premium fabrics sourced from trusted suppliers worldwide
                 </p>
               </div>
-              <div className="space-y-2">
-                <h3 className="font-semibold text-accent">Timeless Design</h3>
+              <div className="feature-card animate-slide-up" style={{ animationDelay: '0.1s' }}>
+                <h3 className="font-semibold text-accent mb-3">Timeless Design</h3>
                 <p className="text-sm text-muted-foreground">
                   Classic silhouettes that transcend seasonal trends
                 </p>
               </div>
-              <div className="space-y-2">
-                <h3 className="font-semibold text-accent">Ethical Production</h3>
+              <div className="feature-card animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                <h3 className="font-semibold text-accent mb-3">Ethical Production</h3>
                 <p className="text-sm text-muted-foreground">
                   Responsibly made with respect for people and planet
                 </p>
@@ -113,18 +113,18 @@ const Index = () => {
         {/* Categories Section */}
         <section className="py-16 px-4">
           <div className="container mx-auto">
-            <h2 className="text-3xl md:text-4xl font-display font-semibold text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-display font-semibold text-center mb-12 animate-slide-up">
               Shop by Category
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8">
               <Link 
                 to="/collections?category=women" 
-                className="group relative h-64 rounded-lg overflow-hidden bg-muted"
+                className="group relative h-64 rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-large animate-slide-up"
               >
-                <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/30 transition-colors duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/60 to-accent/40 group-hover:from-primary/70 group-hover:to-accent/50 transition-all duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <h3 className="text-2xl font-display font-semibold text-white">
+                  <h3 className="text-2xl font-display font-semibold text-white group-hover:scale-110 transition-transform duration-300">
                     Women's
                   </h3>
                 </div>
@@ -132,11 +132,12 @@ const Index = () => {
               
               <Link 
                 to="/collections?category=men" 
-                className="group relative h-64 rounded-lg overflow-hidden bg-muted"
+                className="group relative h-64 rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-large animate-slide-up"
+                style={{ animationDelay: '0.1s' }}
               >
-                <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/30 transition-colors duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-br from-highlight/60 to-primary/40 group-hover:from-highlight/70 group-hover:to-primary/50 transition-all duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <h3 className="text-2xl font-display font-semibold text-white">
+                  <h3 className="text-2xl font-display font-semibold text-white group-hover:scale-110 transition-transform duration-300">
                     Men's
                   </h3>
                 </div>
@@ -144,11 +145,12 @@ const Index = () => {
               
               <Link 
                 to="/collections?category=kids" 
-                className="group relative h-64 rounded-lg overflow-hidden bg-muted"
+                className="group relative h-64 rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-large animate-slide-up"
+                style={{ animationDelay: '0.2s' }}
               >
-                <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/30 transition-colors duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/60 to-highlight/40 group-hover:from-accent/70 group-hover:to-highlight/50 transition-all duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <h3 className="text-2xl font-display font-semibold text-white">
+                  <h3 className="text-2xl font-display font-semibold text-white group-hover:scale-110 transition-transform duration-300">
                     Kids
                   </h3>
                 </div>
@@ -158,22 +160,23 @@ const Index = () => {
         </section>
 
         {/* Newsletter Section */}
-        <section className="py-16 px-4 bg-primary text-primary-foreground">
-          <div className="container mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-display font-semibold mb-4">
+        <section className="py-16 px-4 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-highlight opacity-90" />
+          <div className="relative container mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-display font-semibold mb-4 text-white animate-slide-up">
               Stay in Touch
             </h2>
-            <p className="text-primary-foreground/80 mb-8">
+            <p className="text-white/90 mb-8 animate-slide-up">
               Be the first to know about new arrivals, exclusive offers, and 
               styling tips from our team.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto animate-slide-up">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-md text-foreground"
+                className="flex-1 px-4 py-3 rounded-md text-foreground bg-white/95 backdrop-blur-sm border-0 focus:ring-2 focus:ring-white/50 transition-all duration-300"
               />
-              <Button className="bg-accent text-accent-foreground hover:bg-accent/90">
+              <Button className="bg-white text-primary hover:bg-white/90 hover:scale-105 transition-all duration-300 px-8 py-3">
                 Subscribe
               </Button>
             </div>

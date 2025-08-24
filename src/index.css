@@ -58,14 +58,23 @@
     --spacing-xl: 3rem;
     --spacing-2xl: 4rem;
 
-    /* Shadows */
+    /* Enhanced shadows with glow effects */
     --shadow-subtle: 0 1px 3px 0 hsl(20 14% 12% / 0.1);
     --shadow-medium: 0 4px 12px 0 hsl(20 14% 12% / 0.1);
     --shadow-large: 0 8px 24px 0 hsl(20 14% 12% / 0.15);
+    --shadow-glow: 0 0 40px hsl(var(--accent) / 0.3);
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.2);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.8), hsl(var(--accent) / 0.4), hsl(var(--highlight) / 0.3));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--secondary)));
+    --gradient-accent: linear-gradient(90deg, hsl(var(--accent)), hsl(var(--highlight)));
 
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.15s ease-out;
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -135,18 +144,49 @@
 }
 
 @layer components {
-  /* Product card hover effects */
+  /* Enhanced product cards */
   .product-card {
-    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+    @apply transition-all duration-300 hover:shadow-elegant hover:-translate-y-2;
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .product-card:hover {
+    box-shadow: var(--shadow-elegant);
+    transform: translateY(-8px) scale(1.02);
   }
 
   .product-card img {
-    @apply transition-transform duration-500 group-hover:scale-105;
+    @apply transition-transform duration-500 group-hover:scale-110;
   }
 
-  /* Hero section gradient overlay */
+  /* Feature cards */
+  .feature-card {
+    @apply p-6 rounded-lg bg-card border border-border/50 hover:shadow-medium transition-all duration-300;
+    background: var(--gradient-card);
+  }
+
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-medium);
+  }
+
+  /* Enhanced hero section */
   .hero-overlay {
-    background: linear-gradient(135deg, hsl(var(--primary) / 0.7), hsl(var(--accent) / 0.3));
+    background: var(--gradient-hero);
+    backdrop-filter: blur(2px);
+  }
+
+  .hero-text {
+    @apply animate-fade-in;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+  }
+
+  .hero-buttons {
+    @apply animate-fade-in;
+    animation-delay: 0.4s;
+    animation-fill-mode: both;
   }
 
   /* Filter sidebar styling */
@@ -154,13 +194,31 @@
     @apply border-b border-border pb-6 mb-6 last:border-b-0 last:pb-0 last:mb-0;
   }
 
-  /* Button variants */
+  /* Enhanced button variants */
   .btn-hero {
-    @apply bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground px-8 py-3 rounded-md font-medium transition-colors duration-200;
+    @apply px-8 py-3 rounded-md font-medium transition-all duration-300;
+    background: var(--gradient-primary);
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .btn-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+    background: var(--gradient-accent);
   }
 
   .btn-outline {
-    @apply border border-border text-foreground hover:bg-secondary px-6 py-2 rounded-md font-medium transition-colors duration-200;
+    @apply border-2 border-accent/50 text-foreground hover:bg-accent/10 px-6 py-2 rounded-md font-medium;
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(10px);
+    background: hsla(var(--background) / 0.8);
+  }
+
+  .btn-outline:hover {
+    border-color: hsl(var(--accent));
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-subtle);
   }
 
   /* Typography utilities */

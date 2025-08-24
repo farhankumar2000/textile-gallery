@@ -16,18 +16,18 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
+      <div className="relative z-10 text-center max-w-4xl mx-auto px-4 hero-text">
         <h1 className="text-5xl md:text-7xl font-display font-semibold mb-6 text-white leading-tight">
           Timeless
           <br />
-          <span className="text-accent">Elegance</span>
+          <span className="text-accent animate-float">Elegance</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
           Discover our curated collection of modern classics, designed for the discerning individual who values quality and style.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center hero-buttons">
           <Button asChild className="btn-hero text-lg px-8 py-3">
             <Link to="/collections">Browse Collection</Link>
           </Button>
@@ -35,7 +35,7 @@ const Hero = () => {
           <Button 
             variant="outline" 
             asChild 
-            className="btn-outline text-white border-white hover:bg-white hover:text-primary text-lg"
+            className="btn-outline text-white border-white text-lg"
           >
             <Link to="/collections?category=new">New Arrivals</Link>
           </Button>
