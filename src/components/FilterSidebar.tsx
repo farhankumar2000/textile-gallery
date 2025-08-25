@@ -19,7 +19,7 @@ interface FilterSidebarProps {
 
 const FilterSidebar = ({ isOpen, onClose, filters, onFiltersChange }: FilterSidebarProps) => {
   const categories = ["men", "women", "kids"];
-  const colors = ["black", "white", "gray", "navy", "beige", "sage", "pink"];
+  const colors = ["black", "white", "gray", "navy", "beige", "sage", "pink", "red", "blue", "green", "yellow"];
   const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
 
   const handleCategoryChange = (category: string, checked: boolean) => {
