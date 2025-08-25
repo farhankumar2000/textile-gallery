@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Banner from "@/components/Banner.jsx";
+import Banner from "@/components/banner.jsx";
 import ProductCard1 from "@/components/ProductCard1";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
