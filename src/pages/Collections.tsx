@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Filter, Grid, List, SortAsc } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -96,6 +96,19 @@ const Collections = () => {
       parseInt(searchParams.get("maxPrice") || "500")
     ] as [number, number]
   });
+
+  // Update filters when URL params change
+  useEffect(() => {
+    setFilters({
+      category: searchParams.getAll("category"),
+      color: searchParams.getAll("color"),
+      size: searchParams.getAll("size"),
+      priceRange: [
+        parseInt(searchParams.get("minPrice") || "0"),
+        parseInt(searchParams.get("maxPrice") || "500")
+      ]
+    });
+  }, [searchParams]);
 
   // Filter and sort products
   const filteredAndSortedProducts = useMemo(() => {
