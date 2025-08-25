@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Banner from "@/components/banner.jsx";
+import Banner2 from "@/components/banner2.jsx";
 import ProductCard1 from "@/components/ProductCard1";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -71,7 +72,12 @@ const Index = () => {
                 {/* <Hero /> */}
 
                 {/* slide */}
-                <Banner />
+                <div className="hidden md:block">
+                    <Banner />
+                </div>
+                <div className="md:hidden">
+                    <Banner2 />
+                </div>
 
                 {/* Shop Introduction */}
                 <section className="py-16 px-4">
