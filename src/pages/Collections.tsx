@@ -112,7 +112,7 @@ const Collections = () => {
 
   // Filter and sort products
   const filteredAndSortedProducts = useMemo(() => {
-    let filtered = products.filter(product => {
+    const filtered = products.filter(product => {
       // Category filter
       if (filters.category.length > 0 && !filters.category.includes(product.category)) {
         return false;
@@ -205,14 +205,14 @@ const Collections = () => {
                   Filters
                 </Button>
                 
-                <span className="text-sm text-muted-foreground">
+                <span className="text-sm text-muted-foreground hidden sm:inline">
                   {filteredAndSortedProducts.length} products found
                 </span>
               </div>
 
-              <div className="flex items-center gap-4">
+              <div className=" items-center gap-4 flex">
                 {/* View Mode Toggle */}
-                <div className="flex items-center border rounded-md">
+                <div className="hidden sm:flex items-center border rounded-md ">
                   <Button
                     variant={viewMode === "grid" ? "default" : "ghost"}
                     size="sm"

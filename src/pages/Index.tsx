@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import ProductCard from "@/components/ProductCard";
+import ProductCard1 from "@/components/ProductCard1";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -8,6 +8,10 @@ import { Link } from "react-router-dom";
 import product1 from "@/assets/product-1.jpg";
 import product2 from "@/assets/product-2.jpg";
 import product3 from "@/assets/product-3.jpg";
+import blackTokyoDress from "@/assets/black-tokyo.jpg";
+import hm from "@/assets/hm.jpg";
+import blackRock from "@/assets/black-rock.jpg";
+import cheque from "@/assets/cheque.jpg";
 
 const Index = () => {
     console.log("Index component loading - Atelier clothing showcase");
@@ -30,14 +34,23 @@ const Index = () => {
             category: "men",
             isNew: false,
         },
+           {
+            id: "hm",
+            name: "Wool Knit Sweater",
+            price: 120,
+            image: hm,
+            category: "men",
+            isNew: false,
+        },
         {
-            id: "3",
-            name: "Linen Summer Dress",
-            price: 85,
-            image: product3,
+            id: "black-tokyo-dress",
+            name: "Bodycon Black Tokyo ",
+            price: 285,
+            image: blackTokyoDress,
             category: "women",
             isNew: true,
         },
+
     ];
 
     return (
@@ -55,7 +68,7 @@ const Index = () => {
                             Crafted for the Modern Individual
                         </h2>
                         <p className="text-lg text-muted-foreground leading-relaxed mb-12 animate-slide-up">
-                            At Atelier, we believe in the power of thoughtful
+                            At Aurra, we believe in the power of thoughtful
                             design and quality craftsmanship. Our curated
                             collection features timeless pieces that seamlessly
                             blend comfort, style, and sustainability. Each
@@ -113,9 +126,9 @@ const Index = () => {
                             </p>
                         </div>
 
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                        <div className="grid  md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 mb-12">
                             {featuredProducts.map((product) => (
-                                <ProductCard
+                                <ProductCard1
                                     key={product.id}
                                     product={product}
                                 />

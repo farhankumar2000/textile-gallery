@@ -29,7 +29,7 @@ const Hero = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center hero-buttons">
           <Button asChild className="btn-hero text-lg  py-3">
-            <Link to="/collections" className="hover:text-black" >Browse Collection</Link>
+            <Link to="/collections" className="hover:text-black" >View Collection</Link>
           </Button>
           
           <Button 
