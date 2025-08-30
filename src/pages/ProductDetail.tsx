@@ -21,6 +21,11 @@ import navy from "@/assets/product-1navy.jpg";
 import pink from "@/assets/product-1pink.jpg";
 import sage from "@/assets/product-1sage.jpg";
 
+import blackTokyoDress from "@/assets/black-tokyo.jpg";
+import hm from "@/assets/hm.jpg";
+import blackRock from "@/assets/black-rock.jpg";
+import cheque from "@/assets/cheque.jpg";
+
 // Mock product data (images grouped by color)
 const products = {
     "1": {
@@ -102,80 +107,153 @@ const products = {
         rating: 4.7,
         reviews: 156,
     },
- "4": {
-    id: "4",
-    name: "Denim Jacket",
-    price: 95,
-    originalPrice: null,
-    category: "men",
-    images: {
-      navy: product4,
-      black: product4,
+    "4": {
+        id: "4",
+        name: "Denim Jacket",
+        price: 95,
+        originalPrice: null,
+        category: "men",
+        images: {
+            navy: product4,
+            black: product4,
+        },
+        colors: ["navy", "black"],
+        sizes: ["S", "M", "L", "XL"],
+        isNew: false,
+        description:
+            "A timeless denim jacket designed for everyday style. Durable fabric with a comfortable fit makes it perfect for layering across all seasons.",
+        features: [
+            "100% Cotton Denim",
+            "Button-front closure",
+            "Multiple pockets",
+            "Machine washable",
+        ],
+        rating: 4.6,
+        reviews: 98,
     },
-    colors: ["navy", "black"],
-    sizes: ["S", "M", "L", "XL"],
-    isNew: false,
-    description:
-      "A timeless denim jacket designed for everyday style. Durable fabric with a comfortable fit makes it perfect for layering across all seasons.",
-    features: [
-      "100% Cotton Denim",
-      "Button-front closure",
-      "Multiple pockets",
-      "Machine washable",
-    ],
-    rating: 4.6,
-    reviews: 98,
-  },
-  "5": {
-    id: "5",
-    name: "Kids Cotton Sweater",
-    price: 35,
-    originalPrice: null,
-    category: "kids",
-    images: {
-      pink: product5,
-      white: product5,
-      beige: product5,
+    "5": {
+        id: "5",
+        name: "Kids Cotton Sweater",
+        price: 35,
+        originalPrice: null,
+        category: "kids",
+        images: {
+            pink: product5,
+            white: product5,
+            beige: product5,
+        },
+        colors: ["pink", "white", "beige"],
+        sizes: ["XS", "S", "M"],
+        isNew: true,
+        description:
+            "Soft and cozy cotton sweater for kids, combining comfort with playful style. Gentle on skin and perfect for school or playtime.",
+        features: [
+            "100% Cotton",
+            "Lightweight and breathable",
+            "Ribbed cuffs and hem",
+            "Machine washable",
+        ],
+        rating: 4.5,
+        reviews: 65,
     },
-    colors: ["pink", "white", "beige"],
-    sizes: ["XS", "S", "M"],
-    isNew: true,
-    description:
-      "Soft and cozy cotton sweater for kids, combining comfort with playful style. Gentle on skin and perfect for school or playtime.",
-    features: [
-      "100% Cotton",
-      "Lightweight and breathable",
-      "Ribbed cuffs and hem",
-      "Machine washable",
-    ],
-    rating: 4.5,
-    reviews: 65,
-  },
-  "6": {
-    id: "6",
-    name: "Wool Winter Coat",
-    price: 185,
-    originalPrice: null,
-    category: "women",
-    images: {
-      black: product6,
-      navy: product6,
-      beige: product6,
+    "6": {
+        id: "6",
+        name: "Wool Winter Coat",
+        price: 185,
+        originalPrice: null,
+        category: "women",
+        images: {
+            black: product6,
+            navy: product6,
+            beige: product6,
+        },
+        colors: ["black", "navy", "beige"],
+        sizes: ["XS", "S", "M", "L", "XL"],
+        isNew: false,
+        description:
+            "Stay warm in style with this premium wool winter coat. Its tailored fit and luxurious texture make it perfect for both casual and formal occasions.",
+        features: [
+            "80% Wool, 20% Polyester",
+            "Double-breasted design",
+            "Side pockets",
+            "Dry clean only",
+        ],
+        rating: 4.9,
+        reviews: 142,
     },
-    colors: ["black", "navy", "beige"],
-    sizes: ["XS", "S", "M", "L", "XL"],
-    isNew: false,
-    description:
-      "Stay warm in style with this premium wool winter coat. Its tailored fit and luxurious texture make it perfect for both casual and formal occasions.",
-    features: [
-      "80% Wool, 20% Polyester",
-      "Double-breasted design",
-      "Side pockets",
-      "Dry clean only",
-    ],
-    rating: 4.9,
-    reviews: 142,
-  },
+    "cheque-shirt": {
+        id: "cheque-shirt",
+        name: "Essential Cheque Shirt",
+        price: 345,
+        originalPrice: 255,
+        category: "men",
+        images: {
+            blue: cheque,
+            red: cheque,
+            green: cheque,
+        },
+        colors: ["blue", "red", "green"],
+        sizes: ["S", "M", "L", "XL"],
+        isNew: true,
+        description:
+            "A versatile cheque shirt crafted from breathable cotton, perfect for both casual and semi-formal occasions. Designed for comfort with a modern fit.",
+        features: [
+            "100% Cotton",
+            "Button-down collar",
+            "Machine washable",
+            "Slim fit design",
+        ],
+        rating: 4.7,
+        reviews: 98,
+    },
+
+    "black-tokyo-dress": {
+        id: "black-tokyo-dress",
+        name: "Bodycon Black Tokyo",
+        price: 285,
+        originalPrice: null,
+        category: "women",
+        images: {
+            black: blackTokyoDress,
+        },
+        colors: ["black"],
+        sizes: ["XS", "S", "M", "L"],
+        isNew: true,
+        description:
+            "This elegant Tokyo-inspired bodycon dress enhances your silhouette with a sleek, modern look. Perfect for evening wear and special occasions.",
+        features: [
+            "Stretchable polyester blend",
+            "Bodycon fit",
+            "Back zipper closure",
+            "Hand wash recommended",
+        ],
+        rating: 4.8,
+        reviews: 76,
+    },
+
+    hm: {
+        id: "hm",
+        name: "Brown Shirt",
+        price: 120,
+        originalPrice: null,
+        category: "men",
+        images: {
+            brown: hm,
+        },
+        colors: ["brown"],
+        sizes: ["M", "L", "XL"],
+        isNew: false,
+        description:
+            "A classic brown shirt that pairs well with jeans or formal trousers. Made from soft cotton fabric for all-day comfort.",
+        features: [
+            "100% Cotton",
+            "Regular fit",
+            "Buttoned cuffs",
+            "Machine washable",
+        ],
+        rating: 4.5,
+        reviews: 54,
+    },
 };
 
 const ProductDetail = () => {
@@ -225,12 +303,14 @@ const ProductDetail = () => {
                         <p className="sm:hidden"> Back</p>
                     </Link>
                     <span>/</span>
-                    <span className="capitalize">{product.category}</span>
+                    <Link to={`/collections?category=${product.category}`}>
+                        <span className="capitalize">{product.category}</span>
+                    </Link>
                     <span>/</span>
                     <span className="text-foreground">{product.name}</span>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-12">
+                <div className="grid lg:grid-cols-2 gap-6   md:gap-12">
                     {/* Product Image */}
                     <div className="space-y-4">
                         <div className="aspect-square overflow-hidden rounded-lg bg-muted">
@@ -325,6 +405,10 @@ const ProductDetail = () => {
                       ${color === "beige" ? "bg-amber-100" : ""}
                       ${color === "sage" ? "bg-green-300" : ""}
                       ${color === "pink" ? "bg-pink-300" : ""}
+                      ${color === "brown" ? "bg-amber-900" : ""}
+                      ${color === "blue" ? "bg-blue-500" : ""}
+                      ${color === "pink" ? "bg-pink-300" : ""}
+
                     `}
                                         title={color}
                                     />
@@ -334,7 +418,7 @@ const ProductDetail = () => {
 
                         {/* Description */}
                         <div>
-                            <h3 className="font-medium mb-2">Description</h3>
+                            <h3 className  ="bg-pink font-medium mb-2">Description</h3>
                             <p className="text-muted-foreground leading-relaxed">
                                 {product.description}
                             </p>

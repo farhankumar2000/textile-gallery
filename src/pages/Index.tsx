@@ -21,7 +21,7 @@ const Index = () => {
     const featuredProducts = [
         {
             id: "cheque-shirt",
-            name: "Essential Cotton Tee",
+            name: "Essential Cheque Shirt",
             price: 345,
             originalPrice: 255,
             image: cheque,
@@ -36,17 +36,9 @@ const Index = () => {
             category: "women",
             isNew: true,
         },
-        // {
-        //     id: "2",
-        //     name: "Wool Knit Sweater",
-        //     price: 120,
-        //     image: product2,
-        //     category: "men",
-        //     isNew: false,
-        // },
         {
             id: "hm",
-            name: "Wool Knit Sweater",
+            name: "Brown Shirt",
             price: 120,
             image: hm,
             category: "men",
